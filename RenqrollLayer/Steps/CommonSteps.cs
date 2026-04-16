@@ -1,8 +1,6 @@
 ﻿using NUnit.Framework;
 using Reqnroll;
-using ReqnrollLayer.Enum;
 using ReqnrollLayer.Pages;
-using ReqnrollLayer.WebDriver;
 
 namespace ReqnrollLayer.Steps
 {
@@ -15,12 +13,7 @@ namespace ReqnrollLayer.Steps
         public CommonSteps(DriverContext context)
         {
             this.context = context;
-            if (this.context.Driver is null)
-            {
-                ChromeDriverFactory driverFactory = new ChromeDriverFactory();
-                this.context.Driver = driverFactory.CreateDriver(WebBrowserMode.UXUI);
-            }
-            this.mainPage = new MainPage(this.context.Driver);
+            this.mainPage = new MainPage(this.context.Driver!);
         }
 
         [Given(@"I navigate to the EPAM website")]
@@ -33,13 +26,6 @@ namespace ReqnrollLayer.Steps
         public void ThenThePageTitleContains(string expectedTitle)
         {
             Assert.IsTrue(this.context.Driver!.Title.Contains(expectedTitle));
-        }
-
-        [AfterScenario]
-        public void AfterScenario()
-        {
-            this.context.Driver?.Quit();
-            this.context.Driver = null;
         }
     }
 }

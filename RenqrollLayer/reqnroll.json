@@ -1,0 +1,6 @@
+{
+  "runtime": {
+    "testThreadIsolation": "appdomain",
+    "stopAtFirstError": false
+  }
+}

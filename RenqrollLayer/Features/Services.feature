@@ -1,4 +1,4 @@
-Feature: Services Page Functionality
+﻿Feature: Services Page Functionality
 
 As an EPAM website user
 I want to cover Services Page Functionality
@@ -13,11 +13,10 @@ Scenario: Validate Services title
 Scenario Outline: Validate Navigation to Services Section
     Given I navigate to the EPAM website
     When I click on the Services navigation link
-    And I took away cursor from the Services navigation link
     And I hover cursor on the Services navigation link
     And I click to '<category>' from Services dropdown menu
-    Then The page title is '<expectedTitle>'
-    And The section 'Our Related Expertise' is displayed on the page
+    Then The section 'Our Related Expertise' is displayed on the page
+    And The page title is '<expectedTitle>'
 
     Examples:
     | category       | expectedTitle                                |
