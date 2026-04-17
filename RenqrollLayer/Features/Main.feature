@@ -3,7 +3,12 @@
 As an EPAM website user
 I want to perform a search on the main page
 
-@test1
+@mainTitleValidation
+Scenario: Validate Main Page title
+    Given I navigate to the EPAM website
+    Then The page title is 'EPAM | Software Engineering & Product Development Services'
+
+@mainSearch
 Scenario Outline: Perform a search on the Epam website
     Given I navigate to the EPAM website
     When I click on the Search icon element
@@ -12,6 +17,6 @@ Scenario Outline: Perform a search on the Epam website
     Then The list of search results is displayed on the page
 
     Examples:
-    |text        |  
-    |Automation  | 
+    |text        |
+    |Automation  |
     |Development |
