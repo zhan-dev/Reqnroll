@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 
+namespace ReqnrollLayer.Pages
 {
     public class MainPage : BasePage
     {
